@@ -1,5 +1,3 @@
-enum color {ORANGE, PUCE, TURQUOISE};
-
 struct person {
 	string name<>;
 	string numTelefone<>;	
@@ -17,6 +15,5 @@ program MANAGER {
 	version MANAGER_V1 {
 		int ADD_PERSON(person) = 1;
 		int REMOVE_PERSON(person) = 2;
-		list GET_LIST(int) = 3;
 	} = 1;
 } = 0x2fffffff;

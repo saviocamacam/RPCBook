@@ -6,16 +6,6 @@
 #include "llist.h"
 
 bool_t
-xdr_color (XDR *xdrs, color *objp)
-{
-	register int32_t *buf;
-
-	 if (!xdr_enum (xdrs, (enum_t *) objp))
-		 return FALSE;
-	return TRUE;
-}
-
-bool_t
 xdr_person (XDR *xdrs, person *objp)
 {
 	register int32_t *buf;

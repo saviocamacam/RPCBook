@@ -14,13 +14,6 @@ extern "C" {
 #endif
 
 
-enum color {
-	ORANGE = 0,
-	PUCE = 1,
-	TURQUOISE = 2,
-};
-typedef enum color color;
-
 struct person {
 	char *name;
 	char *numTelefone;
@@ -61,12 +54,10 @@ extern int manager_1_freeresult ();
 /* the xdr functions */
 
 #if defined(__STDC__) || defined(__cplusplus)
-extern  bool_t xdr_color (XDR *, color*);
 extern  bool_t xdr_person (XDR *, person*);
 extern  bool_t xdr_list (XDR *, list*);
 
 #else /* K&R C */
-extern bool_t xdr_color ();
 extern bool_t xdr_person ();
 extern bool_t xdr_list ();
 

@@ -92,6 +92,3 @@ int *remove_person_1_svc(person *prs, struct svc_req *req)
     return &result;
 }
 
-list * get_list_1_svc(int value, struct svc_req *req) {
-    return *lst;
-}

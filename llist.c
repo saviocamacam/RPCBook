@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
                 break;
             case 3:
                 printf("Solicitando lista de contados no servidor: \n");
-                int *value = (int*)1;
+                /*int *value = (int*)1;
                 lst = get_list_1(value,cl);
                 if(lst == NULL) {
                     printf("Lista inexistente!\n");
@@ -98,7 +98,7 @@ int main(int argc, char *argv[])
                         printf("numero: %s\n", aux->numTelefone);
                         aux = aux->next;
                     }
-                }
+                }*/
                 break;
             default:
                 break;
