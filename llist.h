@@ -46,9 +46,6 @@ extern  int * add_person_1_svc(person *, struct svc_req *);
 #define REMOVE_PERSON 2
 extern  int * remove_person_1(person *, CLIENT *);
 extern  int * remove_person_1_svc(person *, struct svc_req *);
-#define GET_LIST 3
-extern  list * get_list_1(int *, CLIENT *);
-extern  list * get_list_1_svc(int *, struct svc_req *);
 extern int manager_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -58,9 +55,6 @@ extern  int * add_person_1_svc();
 #define REMOVE_PERSON 2
 extern  int * remove_person_1();
 extern  int * remove_person_1_svc();
-#define GET_LIST 3
-extern  list * get_list_1();
-extern  list * get_list_1_svc();
 extern int manager_1_freeresult ();
 #endif /* K&R C */
 

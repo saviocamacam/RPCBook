@@ -38,18 +38,3 @@ remove_person_1(person *argp, CLIENT *clnt)
 	}
 	return (&clnt_res);
 }
-
-list *
-get_list_1(int *argp, CLIENT *clnt)
-{
-	static list clnt_res;
-
-	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, GET_LIST,
-		(xdrproc_t) xdr_int, (caddr_t) argp,
-		(xdrproc_t) xdr_list, (caddr_t) &clnt_res,
-		TIMEOUT) != RPC_SUCCESS) {
-		return (NULL);
-	}
-	return (&clnt_res);
-}

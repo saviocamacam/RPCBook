@@ -22,7 +22,6 @@ manager_1(struct svc_req *rqstp, register SVCXPRT *transp)
 	union {
 		person add_person_1_arg;
 		person remove_person_1_arg;
-		int get_list_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -43,12 +42,6 @@ manager_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_person;
 		_xdr_result = (xdrproc_t) xdr_int;
 		local = (char *(*)(char *, struct svc_req *)) remove_person_1_svc;
-		break;
-
-	case GET_LIST:
-		_xdr_argument = (xdrproc_t) xdr_int;
-		_xdr_result = (xdrproc_t) xdr_list;
-		local = (char *(*)(char *, struct svc_req *)) get_list_1_svc;
 		break;
 
 	default:
