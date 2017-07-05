@@ -49,9 +49,9 @@ int main(int argc, char *argv[])
             case 1:
                 printf("ADICIONAR CONTATO\n");
                 printf("Informe o nome: ");
-                scanf("%s", name);
+                scanf("%[^\n]s", name);
                 printf("\nInforme o numero: ");
-                scanf("%s", num);
+                scanf("%[^\n]s", num);
                 prs = mk_person(name, num);
 
                 if(prs == NULL)
@@ -67,9 +67,9 @@ int main(int argc, char *argv[])
             case 2:
                 printf("REMOVER CONTATO\n");
                 printf("Informe o nome: ");
-                scanf("%s", name);
+                scanf("%[^\n]s", name);
                 printf("\nInforme o numero: ");
-                scanf("%s", num);
+                scanf("%[^\n]s", num);
                 prs = mk_person(name, num);
 
                 result = remove_person_1(prs, cl);
