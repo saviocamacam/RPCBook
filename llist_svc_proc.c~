@@ -17,48 +17,37 @@ void createList() {
     lst->numPersons = 0;
 }
 
-void printList() {
-    if(lst == NULL) {
-        printf("Lista ainda vazia");
-    }
-    else {
-        person * aux = lst->first;
-        while(aux != NULL) {
-            printf("nome: %s\n", aux->name);
-            printf("num: %s", aux->numTelefone);
-            aux = aux->next;
-        }
-    }
-}
-
 /* print out a list, returning the number of items printed */
 int *add_person_1_svc(person *prs, struct svc_req *req)
 {
-    printList();    
+    person * ptr;
+    ptr = prs;
+
     if(lst == NULL) {
         createList();
         if(lst == NULL)
             printf("Deu merda ao criar a lista. Por que? Nao sei\n");
     }
     
-    if(lst->first == NULL && lst->last == NULL){
-        lst->first = prs;
-        lst->last = prs;
-        lst->numPersons = lst->numPersons + 1;
-        result = 1;
-        return &result;
-    }
-    
     person * aux = lst->first;
-    while(aux->next != NULL) {
-        aux = aux->next;
+    if(aux == NULL){
+        lst->first = ptr;
+        lst->last = ptr;
+        lst->numPersons = lst->numPersons + 1;
     }
-    aux->next = prs;
-    prs->previous = lst->last;
-    lst->last->next = prs;
-    lst->last = prs;
-    lst->numPersons = lst->numPersons + 1;
-    
+    else {
+        while(aux != NULL) {
+            printf("nome: %s\n", aux->name);
+            printf("telefone: %s\n", aux->numTelefone);
+            aux = aux->next;
+        }
+        ptr->previous = lst->last;
+        lst->last->next = ptr;
+        lst->last = ptr;
+        lst->numPersons = lst->numPersons + 1;
+        printf("nome: %s\n", lst->last->name);
+        printf("telefone: %s\n", lst->last->numTelefone);
+    }
     result = 1;
     return &result;
 }
