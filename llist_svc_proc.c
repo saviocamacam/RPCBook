@@ -18,6 +18,7 @@ void createList() {
 }
 
 void printList() {
+    printf("print list");
     if(lst == NULL) {
         printf("Lista ainda vazia");
     }
@@ -34,8 +35,10 @@ void printList() {
 /* print out a list, returning the number of items printed */
 int *add_person_1_svc(person *prs, struct svc_req *req)
 {
+    printf("Primeira linha");
     printList();    
     if(lst == NULL) {
+            printf("lst is null");
         createList();
         if(lst == NULL)
             printf("Deu merda ao criar a lista. Por que? Nao sei\n");
